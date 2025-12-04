@@ -1,0 +1,21 @@
+  bool isPredecessor(string &prev, string &curr) {
+      if(prev.length() + 1 != curr.length()) {
+          return false;
+      }
+      int i = 0, j = 0, diff = 0;
+      while(i < prev.length() && j < curr.length()) {
+          if(prev[i] == curr[j]) {
+              i++;
+              j++;
+          }
+          else {
+              diff++;
+              j++;
+              if(diff > 1) {
+                  return false;
+              }
+          }
+      }
+
+      return true;
+  }
